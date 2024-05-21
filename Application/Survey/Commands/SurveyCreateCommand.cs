@@ -14,7 +14,7 @@ namespace Application.Survey.Commands
 {
     public class SurveyCreateCommand : IRequest<Domain.Models.Survey>
     {
-        public SurveyCreateCommand(string question, string createdBy, List<Option> options, Settings settings)
+        public SurveyCreateCommand(string question, string createdBy, List<Domain.Models.Option> options, Settings settings)
         {
             Question = question;
             CreatedBy = createdBy;
@@ -23,7 +23,7 @@ namespace Application.Survey.Commands
         }
         public string Question { get; private set; }
         public string CreatedBy { get; private set; }
-        public List<Option> Options { get; set; }
+        public List<Domain.Models.Option> Options { get; set; }
         public Settings Settings { get; set; }
 
         public class Handler : IRequestHandler<SurveyCreateCommand, Domain.Models.Survey>

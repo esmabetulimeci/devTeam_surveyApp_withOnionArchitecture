@@ -13,7 +13,7 @@ namespace Application.Survey.Commands
 {
     public class SurveyUpdateCommand : IRequest<Domain.Models.Survey>
     {
-        public SurveyUpdateCommand(int id, string question, string createdBy, List<Option> options, Settings settings)
+        public SurveyUpdateCommand(int id, string question, string createdBy, List<Domain.Models.Option> options, Settings settings)
         {
             Id = id;
             Question = question;
@@ -24,7 +24,7 @@ namespace Application.Survey.Commands
         public int Id { get; private set; } // Güncellenecek anketin kimliği
         public string Question { get; private set; }
         public string CreatedBy { get; private set; }
-        public List<Option> Options { get; private set; }
+        public List<Domain.Models.Option> Options { get; private set; }
         public Settings Settings { get; private set; }
 
         public class Handler : IRequestHandler<SurveyUpdateCommand, Domain.Models.Survey>

@@ -51,7 +51,7 @@ namespace Application.Vote.Commands
                 await _surveyAppDbContext.SaveChangesAsync(cancellationToken);
             }
 
-            private void RunRule(UseVoteCommand request, List<Option> options, Domain.Models.Survey survey)
+            private void RunRule(UseVoteCommand request, List<Domain.Models.Option> options, Domain.Models.Survey survey)
             {
                 if (request.OptionsIdList.Count != options.Count)
                 {

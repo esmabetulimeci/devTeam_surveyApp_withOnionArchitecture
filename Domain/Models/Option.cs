@@ -14,5 +14,27 @@ namespace Domain.Models
 
         public virtual Survey Survey { get; set; }
         public virtual List<Vote> Votes { get; set; }
+
+        public static Option Create(string type, string description, int order)
+        {
+            return new Option
+            {
+                Type = type,
+                Description = description,
+                Order = order
+            };
+        }
+
+        public void Update(string type, string description, int order)
+        {
+            Type = type;
+            Description = description;
+            Order = order;
+        }
+
+     
+
     }
+
+
 }
