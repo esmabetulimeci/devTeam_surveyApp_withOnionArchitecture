@@ -1,10 +1,13 @@
-﻿using Application.Survey.Commands;
+﻿using Application.Vote.Commands;
 
-namespace WebApi.Models.Request
+namespace WebApi.Models.Request.Create
 {
     public class VoteCreateRequest
     {
+        public int SurveyId { get; set; }
+
         public string UsedBy { get; set; }
+
         public List<int> OptionIdList { get; set; }
 
         public UseVoteCommand ToCommand(int surveyId)

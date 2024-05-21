@@ -1,9 +1,10 @@
 ﻿using Domain.Models;
 
-namespace WebApi.Models.Request
+namespace WebApi.Models.Request.Create
 {
     public class SurveyCreateRequest
     {
+     
         public string Question { get; set; }
         public string CreatedBy { get; set; }
         public List<OptionCreateRequest> Options { get; set; }

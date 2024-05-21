@@ -34,14 +34,24 @@ namespace Domain.Models
         public virtual List<Option> Options { get; set; }
         public virtual List<Vote> Votes { get; set; }
 
-
+      
         public static Survey Create(string question, string createdBy, Settings settings, List<Option> options)
         {
             return new Survey(question, createdBy, settings, options);
         }
-        public Survey Update()
+
+        public  Survey Update(string question, string createdBy, Settings settings, List<Option> options)
         {
+            if (string.IsNullOrWhiteSpace(createdBy))
+            {
+                createdBy = "admin";
+            }
+            Question = question;
+            CreatedBy = createdBy;
+            Settings = settings;
+            Options = options;
             return this;
         }
+    
     }
 }

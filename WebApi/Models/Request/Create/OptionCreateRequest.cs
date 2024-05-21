@@ -1,4 +1,4 @@
-﻿namespace WebApi.Models.Request
+﻿namespace WebApi.Models.Request.Create
 {
     public class OptionCreateRequest
     {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Survey.Commands
+namespace Application.Vote.Commands
 {
     public class UseVoteCommand : IRequest
     {
@@ -45,7 +45,7 @@ namespace Application.Survey.Commands
 
                 RunRule(request, options, survey);
 
-                var vote = Vote.Create(request.UsedBy, options, survey);
+                var vote = Domain.Models.Vote.Create(request.UsedBy, options, survey);
 
                 _surveyAppDbContext.Votes.Add(vote);
                 await _surveyAppDbContext.SaveChangesAsync(cancellationToken);
